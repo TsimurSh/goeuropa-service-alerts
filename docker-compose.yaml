@@ -4,3 +4,5 @@ services:
     image: timurshyk/service-alerts-server
     ports:
       - "8888:8888"
+    healthcheck:
+      test: [ "CMD", "curl", "-I", "http://backend:8080/actuator/health" ]
